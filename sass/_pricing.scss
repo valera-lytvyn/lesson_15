@@ -1,0 +1,234 @@
+.pricing {
+   @include size($h, $w);
+
+   &_background {
+      background-color: #9789f9;
+      min-height: 100%;
+      min-width: 100%;
+      @include display($df, $jc, $ai);
+
+   }
+
+   &_column {
+      background: #f5f4f9;
+      @include display($df, space-between, $ai);
+      flex-direction: column;
+
+
+
+      &_price {
+         @include display($df, $jc, $ai);
+
+
+         .sing_wrap {
+            @include display($df, $jc, flex-start);
+            align-self: flex-start;
+         }
+
+         .sign {
+            @include font(24px, $ff, 200, 2px, 1, $color_18);
+            text-transform: uppercase;
+            margin-top: 8px;
+            // ??????????
+         }
+
+         .cost {
+            @include font(60px, $ff, 200, 5px, 1, $color_18);
+            text-transform: uppercase;
+         }
+
+         .cell_hr_wrap {
+            @include display($df, $jc, flex-end);
+            align-self: flex-end;
+         }
+
+         .cell_hr {
+            @include font(16px, $ff, 300, 1px, 1, $color_18);
+            margin-bottom: 5px;
+            // ??????????
+         }
+      }
+
+      &_title {
+         @include display($df, $jc, $ai);
+         @include font(24px, $ff, 400, 1px, 36px, $color_18);
+         text-transform: uppercase;
+
+      }
+
+      .logo {
+         position: relative;
+         top: 20px;
+         @include display($df, $jc, flex-start);
+         background: $color_w;
+         min-height: 180px;
+         border-radius: 50%;
+         @include font(30px, "themify", 400, 2px, 36px, $color_18);
+         z-index: 1;
+      }
+
+      &_body {
+         @include display($df, $jc, $ai);
+         background: $color_w;
+         margin-top: -65px;
+         padding-bottom: 50px;
+         position: relative;
+         z-index: 55;
+
+         & li {
+            @include font(16px, "Roboto", 300, 1, 53px, $color_18);
+
+            &:last-child {
+               margin-bottom: 50px;
+            }
+         }
+
+      }
+
+      &_grey {
+         position: relative;
+         background: #efebff;
+         height: 60px;
+
+
+         .button {
+            position: absolute;
+            top: 35px;
+            left: calc(50% - 100px);
+            background: #6fcffb;
+            border-radius: 30px;
+            text-align: center;
+            z-index: 999;
+            @include font(18px, $ff, 700, 1px, 53px, $color_w);
+            @include size(50px, 200px)
+         }
+
+         .hidden_text {
+            @include font(11px, "Roboto", 300, 1, 80px, #a9a9a9);
+            text-align: center;
+
+         }
+      }
+
+      &:hover {
+         transform: scale(1.1);
+
+         ul {
+            transform: scale(.9);
+            margin-top: -10px;
+
+         }
+
+         li:last-child {
+            margin-bottom: 40px;
+         }
+
+         .pricing_column_grey {
+            height: 90px;
+         }
+
+         .button {
+            background: #fa6039;
+            top: -25px;
+         }
+
+         .hidden_text {
+
+            line-height: 110px;
+
+         }
+      }
+   }
+
+   .pricing_column_hover_efect {
+      display: none;
+   }
+
+   .second:hover {
+      position: relative;
+
+
+      .pricing_column_hover_efect {
+         position: absolute;
+         display: block;
+         right: 0px;
+         top: 0px;
+         @include size(60px, 60px);
+
+
+         .circle_wrap {
+            position: relative;
+            @include size(60px, 60px);
+
+            .circle_1 {
+               position: absolute;
+               top: 0;
+               right: 0;
+               @include size(4px, 4px);
+               background: $color_org;
+               border-radius: 50%;
+            }
+
+            .circle_2 {
+               @include size(14px, 14px);
+               position: absolute;
+               top: 4px;
+               right: 4px;
+               background: $color_org;
+               border-radius: 50%;
+            }
+
+            .circle_3 {
+               @include size(45px, 45px);
+               position: absolute;
+               bottom: 0px;
+               left: 0px;
+               background: $color_org;
+               border-radius: 50%;
+               text-align: center;
+               @include font(24px, $ff, 400, 1, 45px, $color_w);
+               text-transform: uppercase;
+
+            }
+
+            .popular_wrap {
+               position: absolute;
+               bottom: 10px;
+               right: -99px;
+
+
+               .popular {
+                  @include size(30px, 100px);
+                  @include font(16px, $ff, 400, 1px, 30px, $color_w);
+                  background: #3b4040;
+                  position: relative;
+                  border-radius: 20px;
+                  text-transform: uppercase;
+                  text-align: center;
+               }
+
+               .popular:before {
+
+                  content: "";
+                  @include size(0px, 0px);
+                  position: absolute;
+                  left: -8px;
+                  top: 0px;
+                  border-top: 15px solid transparent;
+                  border-right: 22px solid #3b4040;
+                  border-bottom: 15px solid transparent;
+               }
+            }
+         }
+      }
+
+
+   }
+}
+
+@media (max-width:576px) {
+   .cost {
+      font-size: 28px;
+   }
+
+}
